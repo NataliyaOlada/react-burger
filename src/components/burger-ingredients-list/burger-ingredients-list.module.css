@@ -1,0 +1,12 @@
+.group {
+  padding: 15px 0;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-left: 0;
+  list-style-type: none;
+}

@@ -1,9 +1,19 @@
 import { Tab } from '@krgaa/react-developer-burger-ui-components';
 
+import BurgerIngredientsList from '@components/burger-ingredients-list/burger-ingredients-list.jsx';
+import { typeIngredients } from '@utils/type-ingredients.js';
+
 import styles from './burger-ingredients.module.css';
 
 export const BurgerIngredients = ({ ingredients }) => {
-  console.log(ingredients);
+  const groupsIngredients = typeIngredients.map((type) => {
+    return {
+      ...type,
+      ingredients: ingredients.length
+        ? ingredients?.filter((item) => item.type === type.type)
+        : [],
+    };
+  });
 
   return (
     <section className={styles.burger_ingredients}>
@@ -38,6 +48,11 @@ export const BurgerIngredients = ({ ingredients }) => {
           </Tab>
         </ul>
       </nav>
+      <div className={styles.ingredients}>
+        {groupsIngredients.map((group) => (
+          <BurgerIngredientsList key={group.id} group={group} />
+        ))}
+      </div>
     </section>
   );
 };
