@@ -1,0 +1,31 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 720px;
+  height: 539px;
+  background-color: #1c1c21;
+  border-radius: 40px;
+  transform: translate(-50%, -50%);
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
+  font-size: 36px;
+}
+
+.title {
+  flex: 1 0 100px;
+  min-width: 600px;
+}
+
+.icon {
+  flex: 0 0 auto;
+  align-self: center;
+  cursor: pointer;
+}

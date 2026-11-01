@@ -1,0 +1,42 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 520px;
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.image {
+  top: 105px;
+  left: 100px;
+  width: 520px;
+  height: 240px;
+  border-width: 1px;
+  opacity: 1;
+}
+
+.name {
+  width: 520px;
+  height: 30px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 8px;
+}
