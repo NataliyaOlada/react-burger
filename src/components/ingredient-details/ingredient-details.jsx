@@ -1,33 +1,39 @@
 import styles from './ingredient-details.module.css';
 
-function IngredientDetails({ item }) {
+function IngredientDetails({ currentIngredient }) {
   return (
     <div className={styles.item}>
-      <img className={styles.image} src={item.image_large} alt={item.name} />
-      <h3 className={styles.name}>{item.name}</h3>
+      <img
+        className={styles.image}
+        src={currentIngredient.image_large}
+        alt={currentIngredient.name}
+      />
+      <h3 className={styles.name}>{currentIngredient.name}</h3>
       <ul className={styles.list}>
         <li className={styles.listItem}>
           <p className="text text_type_main-default text_color_inactive">
             Калории, ккал
           </p>
           <p className="text text_type_main-default text_color_inactive">
-            {item.calories}
+            {currentIngredient.calories}
           </p>
         </li>
         <li className={styles.listItem}>
           <p className="text text_type_main-default text_color_inactive">Белки, г</p>
           <p className="text text_type_main-default text_color_inactive">
-            {item.proteins}
+            {currentIngredient.proteins}
           </p>
         </li>
         <li className={styles.listItem}>
           <p className="text text_type_main-default text_color_inactive">Жиры, г</p>
-          <p className="text text_type_main-default text_color_inactive">{item.fat}</p>
+          <p className="text text_type_main-default text_color_inactive">
+            {currentIngredient.fat}
+          </p>
         </li>
         <li className={styles.listItem}>
           <p className="text text_type_main-default text_color_inactive">Углеводы, г</p>
           <p className="text text_type_main-default text_color_inactive">
-            {item.carbohydrates}
+            {currentIngredient.carbohydrates}
           </p>
         </li>
       </ul>

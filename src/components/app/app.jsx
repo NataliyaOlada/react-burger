@@ -15,11 +15,12 @@ export const App = () => {
     getIngredients()
       .then((data) => {
         setIngredients(data);
-        setIsPending(false);
       })
       .catch((error) => {
         console.error('Ошибка при получении данных', error);
         setIngredients([]);
+      })
+      .finally(() => {
         setIsPending(false);
       });
   }, []);

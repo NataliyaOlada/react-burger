@@ -6,6 +6,7 @@ import {
 } from '@krgaa/react-developer-burger-ui-components';
 import { useState } from 'react';
 
+import { useModal } from '@components/hooks/useModal.js';
 import Modal from '@components/modal/modal.jsx';
 import OrderDetails from '@components/order-details/order-details.jsx';
 
@@ -18,11 +19,7 @@ export const BurgerConstructor = ({ ingredients }) => {
     ? ingredients.filter((item) => item.type !== 'bun')
     : [];
 
-  const [showModal, setShowModal] = useState(false);
-
-  function handleClick() {
-    setShowModal(!showModal);
-  }
+  const { isModalOpen, openModal, closeModal } = useModal();
 
   return (
     <section className={styles.burger_constructor}>
@@ -30,7 +27,7 @@ export const BurgerConstructor = ({ ingredients }) => {
         <ConstructorElement
           extraClass={styles.itemTopBottom}
           price={ingredients[0].price}
-          text={ingredients[0].name}
+          text={ingredients[0].name + ' (верх)'}
           thumbnail={ingredients[0].image}
           type="top"
           isLocked={true}
@@ -53,7 +50,7 @@ export const BurgerConstructor = ({ ingredients }) => {
         <ConstructorElement
           extraClass={styles.itemTopBottom}
           price={ingredients[0].price}
-          text={ingredients[0].name}
+          text={ingredients[0].name + ' (низ)'}
           thumbnail={ingredients[0].image}
           type="bottom"
           isLocked={true}
@@ -64,11 +61,11 @@ export const BurgerConstructor = ({ ingredients }) => {
           <span>{totalPrice}</span>
           <CurrencyIcon type="primary" />
         </div>
-        <Button type="primary" size="large" htmlType="button" onClick={handleClick}>
+        <Button type="primary" size="large" htmlType="button" onClick={openModal}>
           Оформить заказ
         </Button>
-        {showModal && (
-          <Modal showModal={showModal} onClose={handleClick}>
+        {isModalOpen && (
+          <Modal showModal={isModalOpen} onClose={closeModal}>
             <OrderDetails />
           </Modal>
         )}

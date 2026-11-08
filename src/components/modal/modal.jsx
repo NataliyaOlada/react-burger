@@ -24,17 +24,18 @@ function Modal({ children, title, showModal, onClose }) {
   }, [showModal]);
 
   return createPortal(
-    <ModalOverlay onClick={onClose}>
+    <>
       <div className={styles.modal}>
-        <div className={styles.header}>
-          <div className={styles.title}>{title ? title : ''}</div>
-          <div className={styles.icon}>
-            <CloseIcon type="primary" onClick={onClose} />
-          </div>
-        </div>
+        <h3 className={`${styles.title} text text_type_main-large pl-10 pt-10 pb-1`}>
+          {title}
+        </h3>
+        <button className={styles.icon}>
+          <CloseIcon onClick={onClose} type="primary" />
+        </button>
         {children}
       </div>
-    </ModalOverlay>,
+      <ModalOverlay onClick={onClose} />
+    </>,
     modalRoot
   );
 }
