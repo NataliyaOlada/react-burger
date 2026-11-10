@@ -1,7 +1,40 @@
+@import url('../../index.css');
+
 .burger_constructor {
   display: flex;
   flex-direction: column;
   width: 600px;
   padding-bottom: 20px;
-  color: var(--text-primary-color);
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  width: 100%;
+  margin: 16px 0 16px 17px;
+  overflow-y: scroll;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.itemTopBottom {
+  margin-left: 48px;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 40px;
+  column-gap: 40px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  column-gap: 9.5px;
 }

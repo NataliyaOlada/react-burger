@@ -1,0 +1,42 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  background-color: #1c1c21;
+  border: 1px solid rgb(76 76 255 / 20%);
+  border-radius: 40px;
+  box-shadow:
+    0 24px 32px rgb(0 0 0 / 4%),
+    0 16px 24px rgb(0 0 0 / 4%),
+    0 4px 8px rgb(0 0 0 / 4%),
+    0 0 1px rgb(0 0 0 / 4%);
+  transform: translate(-50%, -50%);
+  transition: 0.5s linear;
+}
+
+.icon {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  z-index: 3;
+  justify-self: flex-end;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.title {
+  margin: 0;
+}
