@@ -25,7 +25,7 @@ function Modal({ children, title, showModal, onClose }) {
 
   return createPortal(
     <>
-      <div className={styles.modal}>
+      <div className={`${styles.modal} pb-5`}>
         <h3 className={`${styles.title} text text_type_main-large pl-10 pt-10 pb-1`}>
           {title}
         </h3>
